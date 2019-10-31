@@ -3,7 +3,7 @@
 
   <div class="grid">
     <% @cocktails.each do |cocktail| %>
-      <div class="card" style=<%= "background-image:url(#{cocktail.image_url})" %>>
+      <div class="card">
         <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
       </div>
     <% end %>

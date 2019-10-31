@@ -13,6 +13,11 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <h1>Cocktails</h1>
+      <%= link_to "Add cocktail", new_cocktail_path %>
+    </div>
+
     <%= yield %>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>

@@ -1,11 +1,24 @@
 .card {
-  height: 100px;
+  height: 400px;
   width : 200px;
   // background-image: attr(data-image-src url);
-  background-size: cover;
+  background-color: rgb(40, 40, 40);
+  // background-size: cover;
+}
+
+.card a {
+  color: rgb(200, 200, 200);
+  font-size: 30px;
+}
+
+.card a:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  grid-row-gap: 20px;
 }

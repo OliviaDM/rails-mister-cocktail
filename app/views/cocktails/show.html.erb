@@ -1,20 +1,27 @@
 <div>
-  <h1><%= @cocktail.name %></h1>
+  <div class="banner">
+    <h2><%= @cocktail.name %></h2>
+  </div>
 
-  <div>
-    <h3>Ingredients</h3>
-    <% if @cocktail.doses.empty? %>
-      <p>No ingredients given yet.</p>
-    <% else %>
-      <ul>
-        <% @cocktail.doses.each do |dose| %>
-          <li><%= dose.ingredient.name + ": " + dose.description %></li>
-          <%= link_to "remove ingredient", cocktail_dose_path(@cocktail.id, dose.id), method: :delete %>
-        <% end %>
-      </ul>
-    <% end %>
-    <h4>Add ingredient</h4>
-    <%= render 'dose', cocktail: @cocktail, dose: @dose %>
+  <div class="flex">
+    <div>
+      <h3>Ingredients</h3>
+      <% if @cocktail.doses.empty? %>
+        <p>No ingredients given yet.</p>
+      <% else %>
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li><%= dose.ingredient.name + ": " + dose.description %></li>
+            <%= link_to "remove ingredient", cocktail_dose_path(@cocktail.id, dose.id), method: :delete %>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+
+    <div>
+      <h4>Add ingredient</h4>
+      <%= render 'dose', cocktail: @cocktail, dose: @dose %>
+    </div>
   </div>
 
   <div>
