@@ -1,0 +1,11 @@
+.card {
+  height: 100px;
+  width : 200px;
+  // background-image: attr(data-image-src url);
+  background-size: cover;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
