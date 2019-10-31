@@ -1,0 +1,20 @@
+<%= simple_form_for([@cocktail, @review]) do |f| %>
+  <% if @review.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= f.label :content %>
+<%= f.text_field :content %>
+
+<%= f.label :rating %>
+<%= f.number_field :rating %>
+
+<%= f.submit %>
+
+<% end %>

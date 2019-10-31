@@ -1,0 +1,13 @@
+<div>
+  <h1>Cocktails</h1>
+
+  <div class="grid">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card" data-image-source=<%= cocktail.image_url %>>
+        <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Add cocktail", new_cocktail_path %>
+</div>

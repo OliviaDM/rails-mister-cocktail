@@ -1,0 +1,38 @@
+<div>
+  <h1><%= @cocktail.name %></h1>
+
+  <div>
+    <h3>Ingredients</h3>
+    <% if @cocktail.doses.empty? %>
+      <p>No ingredients given yet.</p>
+    <% else %>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= dose.ingredient.name + ": " + dose.description %></li>
+          <%= link_to "remove ingredient", cocktail_dose_path(@cocktail.id, dose.id), method: :delete %>
+        <% end %>
+      </ul>
+    <% end %>
+    <h4>Add ingredient</h4>
+    <%= render 'dose', cocktail: @cocktail, dose: @dose %>
+  </div>
+
+  <div>
+    <h3>Reviews</h3>
+    <% if @cocktail.reviews.empty? %>
+      <p>No reviews given yet.</p>
+    <% else %>
+      <ul>
+        <% @cocktail.reviews.each do |review| %>
+          <%= review.content %>
+          <%= '*' * review.rating %>
+        <% end %>
+      </ul>
+    <% end %>
+    <h4>Add review</h4>
+    <%= render 'review', cocktail: @cocktail, review: @review %>
+  </div>
+
+
+  <%= link_to "Back to cocktail list", cocktails_path %>
+</div>
