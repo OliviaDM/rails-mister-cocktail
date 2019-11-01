@@ -9,13 +9,13 @@
 require 'json'
 require 'open-uri'
 
-# ing = JSON.parse(open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read)
+ing = JSON.parse(open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read)
 
-# ing["drinks"].each do |ingredient|
-#   name = ingredient["strIngredient1"]
-#   new_ing = Ingredient.new(name: name)
-#   new_ing.save
-# end
+ing["drinks"].each do |ingredient|
+  name = ingredient["strIngredient1"]
+  new_ing = Ingredient.new(name: name)
+  new_ing.save
+end
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 
